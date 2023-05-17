@@ -31,7 +31,7 @@ public class Participation {
 	private Person person;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "event", referencedColumnName = "id")
+	@JoinColumn(name = "event_id", referencedColumnName = "id")
 	private Event event;
 	
 	@Enumerated(EnumType.STRING)

@@ -21,7 +21,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Event {
-	
 
 	@Id
 	@GeneratedValue
@@ -39,7 +38,7 @@ public class Event {
 	@OneToMany(mappedBy="event", cascade = CascadeType.ALL)
 	private Set<Participation> participants;
 
-	public Event(String title, LocalDate date, String description, EventType event_type, int max_event_participants, Location location) {
+	public Event(String title, LocalDate date, String description, EventType event_type, int max_event_participants, Location location, Set<Participation> participants) {
 		super();
 		this.title = title;
 		this.date = date;
@@ -47,6 +46,7 @@ public class Event {
 		this.event_type = event_type;
 		this.max_event_participants = max_event_participants;
 		this.location = location;
+		this.participants = participants;
 	}
 
 

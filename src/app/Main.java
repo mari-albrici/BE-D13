@@ -1,6 +1,5 @@
 package app;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -42,29 +41,29 @@ public class Main {
 		Location restaurant = new Location("Da Vittorio", "Bergamo");
 		Location villa = new Location("Villa Malaguzzi", "Brescia");
 		
-//		lp.save(villa);
-//		lp.save(hotel);
-//		lp.save(restaurant);
+		lp.save(villa);
+		lp.save(hotel);
+		lp.save(restaurant);
 		
 		
 		Person alphaPerson = new Person("Mario", "Rossi", "mario.rossi@gmail.com", LocalDate.of(1989, 6, 06), Gender.MALE, new HashSet<>());
 		Person betaPerson = new Person("Luigia", "Rossi", "luigi.rossi@gmail.com", LocalDate.of(1998, 8, 06), Gender.FEMALE, new HashSet<>());
 		
-//		pd.save(betaPerson);
-//		pd.save(alphaPerson);
+		pd.save(betaPerson);
+		pd.save(alphaPerson);
 		
 		
-		Event dinner = new Event("Gala Dinner", LocalDate.of(2023, 6, 06), "Beneficienza", EventType.PUBBLICO, 300, hotel);
-//		ed.save(dinner);
-//		logger.info(dinner.getTitle() + " has been saved");
+		Event dinner = new Event("Gala Dinner", LocalDate.of(2023, 6, 06), "Beneficienza", EventType.PUBBLICO, 300, hotel, new HashSet<>());
+		ed.save(dinner);
+		logger.info(dinner.getTitle() + " has been saved");
 		
-		Event luncheon = new Event("Hollywood Luncheon", LocalDate.of(2023, 12, 23), "Beneficienza", EventType.PRIVATO, 800, restaurant);
-//		ed.save(luncheon);
-//		logger.info(luncheon.getTitle() + " has been saved");
+		Event luncheon = new Event("Hollywood Luncheon", LocalDate.of(2023, 12, 23), "Beneficienza", EventType.PRIVATO, 800, restaurant, new HashSet<>());
+		ed.save(luncheon);
+		logger.info(luncheon.getTitle() + " has been saved");
 		
-		Event brunch = new Event("BYOD Brunch", LocalDate.of(2023, 6, 06), "Festa privata", EventType.PRIVATO, 150, villa);
-//		ed.save(brunch);
-//		logger.info(brunch.getTitle() + " has been saved");
+		Event brunch = new Event("BYOD Brunch", LocalDate.of(2023, 6, 06), "Festa privata", EventType.PRIVATO, 150, villa, new HashSet<>());
+		ed.save(brunch);
+		logger.info(brunch.getTitle() + " has been saved");
 		
 		
 		Set<Participation> participations = new HashSet<>();
@@ -75,8 +74,8 @@ public class Main {
 		participations.add(participationOne);
 		participations.add(participationTwo);
 		
-//		pd1.save(participationOne);
-//		pd1.save(participationTwo);
+		pd1.save(participationOne);
+		pd1.save(participationTwo);
 
 
 

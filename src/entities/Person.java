@@ -38,7 +38,7 @@ public class Person {
 	private Gender gender;
 	
 	@OneToMany
-	@JoinColumn(name = "id", referencedColumnName = "id")
+	@JoinColumn(name = "person_id", referencedColumnName = "id")
 	@OrderBy("date DESC")
 	private Set<Participation> eventParticipation;
 	
