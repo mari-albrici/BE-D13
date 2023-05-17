@@ -6,8 +6,7 @@ import javax.persistence.EntityTransaction;
 import entities.Event;
 
 public class EventDAO {
-	// QUA DENTRO AVREMO PURE BISOGNO DELL'ENTITY MANAGER OLTRE CHE AI METODI , LO
-	// CREERO NEL MAIN E LO PASSERO AI MIEI DAO
+
 	private final EntityManager em;
 
 	public EventDAO(EntityManager em) {

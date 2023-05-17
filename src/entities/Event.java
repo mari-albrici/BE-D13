@@ -3,18 +3,23 @@ package entities;
 import java.time.LocalDate;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "events")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Event {
 	
 
@@ -27,10 +32,14 @@ public class Event {
 	private String description;
 	private EventType event_type;
 	private int max_event_participants;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Location location;
+	
+	@OneToMany(mappedBy="event", cascade = CascadeType.ALL)
 	private Set<Participation> participants;
 
-	public Event(String title, LocalDate date, String description, EventType event_type, int max_event_participants, Location location, Set<Participation> participants) {
+	public Event(String title, LocalDate date, String description, EventType event_type, int max_event_participants, Location location) {
 		super();
 		this.title = title;
 		this.date = date;
@@ -40,9 +49,6 @@ public class Event {
 		this.location = location;
 	}
 
-	public Event() {
-
-	}
 
 	@Override
 	public String toString() {

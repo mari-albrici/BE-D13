@@ -2,7 +2,10 @@ package entities;
 
 import java.util.UUID;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,11 +26,15 @@ public class Participation {
 	@Id
 	@GeneratedValue
 	private UUID id;
-	private Person person;
 	
 	@ManyToOne
-	@JoinColumn(name="")
+	private Person person;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "event", referencedColumnName = "id")
 	private Event event;
+	
+	@Enumerated(EnumType.STRING)
 	private State state;
 	
 	public Participation(Person person, Event event, State state) {

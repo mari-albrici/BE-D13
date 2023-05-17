@@ -1,5 +1,5 @@
 package entities;
 
 public enum State {
-	CONFIRMED, UNCONFIIRMED
+	CONFIRMED, UNCONFIRMED
 }
