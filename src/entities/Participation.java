@@ -28,9 +28,10 @@ public class Participation {
 	private UUID id;
 	
 	@ManyToOne
+	@JoinColumn(name = "person_id", referencedColumnName = "id")
 	private Person person;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "event_id", referencedColumnName = "id")
 	private Event event;
 	
@@ -43,5 +44,8 @@ public class Participation {
 		this.state = state;
 	}
 	
-
+	@Override
+	public String toString() {
+		return event + " " + state;
+	}
 }

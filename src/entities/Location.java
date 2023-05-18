@@ -30,5 +30,10 @@ public class Location {
 		this.city = city;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return name + " " + city;
+	}
 }
 

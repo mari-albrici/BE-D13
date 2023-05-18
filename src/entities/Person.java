@@ -37,8 +37,7 @@ public class Person {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
-	@OneToMany
-	@JoinColumn(name = "person_id", referencedColumnName = "id")
+	@OneToMany(mappedBy = "person")
 	@OrderBy("date DESC")
 	private Set<Participation> eventParticipation;
 	
@@ -51,5 +50,9 @@ public class Person {
 		this.eventParticipation = eventParticipation;
 	}
 	
+	@Override
+	public String toString() {
+		return name + " " + lastname + " " + birthday + " " + email + " " + gender;
+	}
 
 }
